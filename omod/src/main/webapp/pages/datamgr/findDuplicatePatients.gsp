@@ -1,11 +1,11 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ layout: "sidebar" ])
+	ui.decorateWith("kpsystem", "standardPage", [ layout: "sidebar" ])
 
-	ui.includeJavascript("kenyadq", "controllers/merge.js")
+	ui.includeJavascript("kpdq", "controllers/merge.js")
 
 	def menuItems = [
-			[ label: "Select patients manually", iconProvider: "kenyadq", icon: "buttons/patient_merge.png", href: ui.pageLink("kenyadq", "datamgr/mergePatients", [ returnUrl: ui.thisUrl() ]) ],
-			[ label: "Back to home", iconProvider: "kenyaui", icon: "buttons/back.png", label: "Back to home", href: ui.pageLink("kenyadq", "datamgr/dataManagerHome") ]
+			[ label: "Select patients manually", iconProvider: "kpdq", icon: "buttons/patient_merge.png", href: ui.pageLink("kpdq", "datamgr/mergePatients", [ returnUrl: ui.thisUrl() ]) ],
+			[ label: "Back to home", iconProvider: "kpui", icon: "buttons/back.png", label: "Back to home", href: ui.pageLink("kpdq", "datamgr/dataManagerHome") ]
 	]
 %>
 
@@ -18,7 +18,7 @@
 			});
 
 			if (patientIds.length == 2) {
-				ui.navigate('kenyadq', 'datamgr/mergePatients', { patient1: patientIds[0], patient2: patientIds[1], returnUrl: location.href });
+				ui.navigate('kpdq', 'datamgr/mergePatients', { patient1: patientIds[0], patient2: patientIds[1], returnUrl: location.href });
 			}
 			else {
 				kenyaui.notifyError('Please select exactly 2 patients to merge');
@@ -28,7 +28,7 @@
 </script>
 
 <div class="ke-page-sidebar">
-	${ ui.includeFragment("kenyaui", "widget/panelMenu", [ heading: "Tasks", items: menuItems ]) }
+	${ ui.includeFragment("kpui", "widget/panelMenu", [ heading: "Tasks", items: menuItems ]) }
 </div>
 
 <div class="ke-page-content">
@@ -45,7 +45,7 @@
 						<input ng-model="byBirthdate" ng-change="refresh()" ng-disabled="loading" type="checkbox" /> Birthdate
 					</td>
 					<td style="text-align: right">
-						<button type="button" id="merge_selected"><img src="${ ui.resourceLink("kenyaui", "images/glyphs/ok.png") }" /> Merge selected</button>
+						<button type="button" id="merge_selected"><img src="${ ui.resourceLink("kpui", "images/glyphs/ok.png") }" /> Merge selected</button>
 					</td>
 				</tr>
 			</table>
@@ -53,10 +53,10 @@
 		<div class="ke-panel-content">
 			<div ng-repeat="patient in results" class="ke-stack-item">
 				<input type="checkbox" name="patientId" value="{{ patient.id }}" class="selected_patient" />
-				${ ui.includeFragment("kenyaemr", "patient/result.mini") }
+				${ ui.includeFragment("kpsystem", "patient/result.mini") }
 			</div>
 			<div ng-if="loading" style="text-align: center; padding-top: 5px">
-				<img src="${ ui.resourceLink("kenyaui", "images/loading.gif") }" />
+				<img src="${ ui.resourceLink("kpui", "images/loading.gif") }" />
 			</div>
 		</div>
 	</div>

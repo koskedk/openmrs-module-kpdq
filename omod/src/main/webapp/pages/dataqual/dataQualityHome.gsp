@@ -1,11 +1,11 @@
 <%
-    ui.decorateWith("kenyaemr", "standardPage")
+    ui.decorateWith("kpsystem", "standardPage")
 %>
 
 <div class="ke-page-content">
-	${ ui.includeFragment("kenyadq", "reports", [ heading: "Common Reports", reports: commonReports ]) }
+	${ ui.includeFragment("kpdq", "reports", [ heading: "Common Reports", reports: commonReports ]) }
 
 	<% programReports.each { programName, programReports -> %>
-		${ ui.includeFragment("kenyadq", "reports", [ heading: programName, reports: programReports ]) }
+		${ ui.includeFragment("kpdq", "reports", [ heading: programName, reports: programReports ]) }
 	<% } %>
 </div>

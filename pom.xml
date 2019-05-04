@@ -2,11 +2,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.openmrs.module</groupId>
-    <artifactId>kenyadq</artifactId>
-    <version>1.3-SNAPSHOT</version>
+    <artifactId>kpdq</artifactId>
+    <version>1.4-SNAPSHOT</version>
 
     <packaging>pom</packaging>
-    <name>KenyaDQ</name>
+    <name>KPDQ</name>
     <description>Data quality management for KenyaEMR</description>
 
     <developers>
@@ -21,9 +21,9 @@
     </organization>
 
     <scm>
-        <connection>scm:git:git@github.com:I-TECH/openmrs-module-kenyadq.git</connection>
-        <developerConnection>scm:git:git@github.com:I-TECH/openmrs-module-kenyadq.git</developerConnection>
-        <url>scm:git:git@github.com:I-TECH/openmrs-module-kenyadq.git</url>
+        <connection>scm:git:git@github.com:I-TECH/openmrs-module-kpdq.git</connection>
+        <developerConnection>scm:git:git@github.com:I-TECH/openmrs-module-kpdq.git</developerConnection>
+        <url>scm:git:git@github.com:I-TECH/openmrs-module-kpdq.git</url>
         <tag>1.1</tag>
     </scm>
 
@@ -39,14 +39,14 @@
         <appframeworkVersion>2.2.1</appframeworkVersion>
         <calculationVersion>1.1</calculationVersion>
         <idgenVersion>2.6</idgenVersion>
-        <kenyacoreVersion>2.4.1-SNAPSHOT</kenyacoreVersion>
-        <kenyauiVersion>2.0.6</kenyauiVersion>
+        <kpcoreVersion>2.4.2-SNAPSHOT</kpcoreVersion>
+        <kpuiVersion>2.2-SNAPSHOT</kpuiVersion>
         <metadatadeployVersion>1.3</metadatadeployVersion>
         <metadatasharingVersion>1.1.8</metadatasharingVersion>
         <reportingVersion>0.9.8.1</reportingVersion>
         <serializationxstreamVersion>0.2.7</serializationxstreamVersion>
         <uiframeworkVersion>3.8</uiframeworkVersion>
-        <kenyaemrVersion>17.0.0-beta</kenyaemrVersion>
+        <kpsystemVersion>17.0.1-SNAPSHOT</kpsystemVersion>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -79,22 +79,22 @@
 
             <dependency>
                 <groupId>org.openmrs.module</groupId>
-                <artifactId>kenyacore-api</artifactId>
-                <version>${kenyacoreVersion}</version>
+                <artifactId>kpcore-api</artifactId>
+                <version>${kpcoreVersion}</version>
                 <scope>provided</scope>
             </dependency>
 
             <dependency>
                 <groupId>org.openmrs.module</groupId>
-                <artifactId>kenyacore-test</artifactId>
-                <version>${kenyacoreVersion}</version>
+                <artifactId>kpcore-test</artifactId>
+                <version>${kpcoreVersion}</version>
                 <scope>test</scope>
             </dependency>
 
             <dependency>
                 <groupId>org.openmrs.module</groupId>
-                <artifactId>kenyaui-api</artifactId>
-                <version>${kenyauiVersion}</version>
+                <artifactId>kpui-api</artifactId>
+                <version>${kpuiVersion}</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -134,8 +134,8 @@
             </dependency>
             <dependency>
                 <groupId>org.openmrs.module</groupId>
-                <artifactId>kenyaemr-api</artifactId>
-                <version>${kenyaemrVersion}</version>
+                <artifactId>kpsystem-api</artifactId>
+                <version>${kpsystemVersion}</version>
                 <scope>provided</scope>
             </dependency>
 

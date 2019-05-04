@@ -47,7 +47,7 @@ kenyaemrApp.controller('DuplicatePatients', ['$scope', '$http', function($scope,
 			byBirthdate: $scope.byBirthdate
 		};
 
-		$http.get(ui.fragmentActionLink('kenyadq', 'patient/mergeUtils', 'getDuplicatePatients', params))
+		$http.get(ui.fragmentActionLink('kpdq', 'patient/mergeUtils', 'getDuplicatePatients', params))
 			.success(function(data) {
 				$scope.results = data;
 				$scope.loading = false;

@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-<!--	<bean id="kenyaemr.hiv.program" class="org.openmrs.module.kenyacore.program.ProgramDescriptor">
+<!--	<bean id="kpsystem.hiv.program" class="org.openmrs.module.kpcore.program.ProgramDescriptor">
 		<property name="targetUuid" value="dfdc6d40-2f2f-463d-ba90-cc97350441a8" />
 		<property name="order" value="100" />
 	</bean>-->

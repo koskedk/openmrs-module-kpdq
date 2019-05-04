@@ -9,19 +9,19 @@
 
 	<!-- ===================== Apps ===================== -->
 
-	<bean id="kenyadq.app.dataqual" factory-bean="kenyacore.appFactoryBean" factory-method="createInstance">
-		<constructor-arg value="kenyadq.dataQuality" />
+	<bean id="kpdq.app.dataqual" factory-bean="kpcore.appFactoryBean" factory-method="createInstance">
+		<constructor-arg value="kpdq.dataQuality" />
 		<constructor-arg value="Data Quality" />
-		<constructor-arg value="kenyadq/dataqual/dataQualityHome.page" />
-		<constructor-arg value="kenyadq:apps/dataqual.png" />
+		<constructor-arg value="kpdq/dataqual/dataQualityHome.page" />
+		<constructor-arg value="kpdq:apps/dataqual.png" />
 		<constructor-arg value="525" />
 	</bean>
 
-	<bean id="kenyadq.app.datamgr" factory-bean="kenyacore.appFactoryBean" factory-method="createInstance">
-		<constructor-arg value="kenyadq.dataManager" />
+	<bean id="kpdq.app.datamgr" factory-bean="kpcore.appFactoryBean" factory-method="createInstance">
+		<constructor-arg value="kpdq.dataManager" />
 		<constructor-arg value="Data Manager" />
-		<constructor-arg value="kenyadq/datamgr/dataManagerHome.page" />
-		<constructor-arg value="kenyadq:apps/datamgr.png" />
+		<constructor-arg value="kpdq/datamgr/dataManagerHome.page" />
+		<constructor-arg value="kpdq:apps/datamgr.png" />
 		<constructor-arg value="550" />
 	</bean>
 
@@ -38,9 +38,9 @@
 			<ref bean="transactionManager" />
 		</property>
 		<property name="target">
-			<bean class="org.openmrs.module.kenyadq.api.impl.KenyaDqServiceImpl" >
+			<bean class="org.openmrs.module.kpdq.api.impl.KenyaDqServiceImpl" >
                 <property name="dao">
-                    <bean class="org.openmrs.module.kenyadq.api.db.impl.KenyaDqHibernateDao">
+                    <bean class="org.openmrs.module.kpdq.api.db.impl.KenyaDqHibernateDao">
                         <property name="sessionFactory"><ref bean="sessionFactory"/></property>
                     </bean>
                 </property>
@@ -60,7 +60,7 @@
 	<bean parent="serviceContext">
 		<property name="moduleService">
 			<list>
-				<value>org.openmrs.module.kenyadq.api.KenyaDqService</value>
+				<value>org.openmrs.module.kpdq.api.KenyaDqService</value>
 				<ref local="kenyaDqService"/>
 			</list>
 		</property>

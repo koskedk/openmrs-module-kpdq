@@ -5,7 +5,7 @@
   		    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 	<bean class="org.openmrs.ui.framework.StandardModuleUiConfiguration">
-		<property name="moduleId" value="kenyadq"/>
+		<property name="moduleId" value="kpdq"/>
 	</bean>
 		
 </beans>

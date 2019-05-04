@@ -1,11 +1,11 @@
 <%
-	ui.decorateWith("kenyaui", "panel", [ heading: "Merge Patients", frameOnly: true ])
+	ui.decorateWith("kpui", "panel", [ heading: "Merge Patients", frameOnly: true ])
 %>
 
-<form id="merge-patients-form" method="post" action="${ ui.actionLink("kenyadq", "patient/mergePatients", "merge") }">
+<form id="merge-patients-form" method="post" action="${ ui.actionLink("kpdq", "patient/mergePatients", "merge") }">
 
 	<div class="ke-panel-controls">
-		<button type="button" class="ke-compact" onclick="switchPatients()"><img src="${ ui.resourceLink("kenyaui", "images/glyphs/switch.png") }" /> Switch</button>
+		<button type="button" class="ke-compact" onclick="switchPatients()"><img src="${ ui.resourceLink("kpui", "images/glyphs/switch.png") }" /> Switch</button>
 	</div>
 
 	<div class="ke-panel-content">
@@ -20,8 +20,8 @@
 				<td class="ke-field-label" style="width: 50%; text-align: center">Patient 2</td>
 			</tr>
 			<tr>
-				<td style="text-align: center">${ ui.includeFragment("kenyaui", "widget/field", [ id: "patient1-select", object: command, property: "patient1" ]) }</td>
-				<td style="text-align: center">${ ui.includeFragment("kenyaui", "widget/field", [ id: "patient2-select", object: command, property: "patient2" ]) }</td>
+				<td style="text-align: center">${ ui.includeFragment("kpui", "widget/field", [ id: "patient1-select", object: command, property: "patient1" ]) }</td>
+				<td style="text-align: center">${ ui.includeFragment("kpui", "widget/field", [ id: "patient2-select", object: command, property: "patient2" ]) }</td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top">
@@ -99,10 +99,10 @@
 
 	<div class="ke-panel-controls">
 		<button type="button" class="merge-button">
-			<img src="${ ui.resourceLink("kenyaui", "images/glyphs/ok.png") }" /> Merge
+			<img src="${ ui.resourceLink("kpui", "images/glyphs/ok.png") }" /> Merge
 		</button>
 		<button type="button" class="cancel-button">
-			<img src="${ ui.resourceLink("kenyaui", "images/glyphs/cancel.png") }" /> Cancel
+			<img src="${ ui.resourceLink("kpui", "images/glyphs/cancel.png") }" /> Cancel
 		</button>
 	</div>
 
@@ -170,7 +170,7 @@
 	function updatePatientSummary(patientId, position) {
 		jq('.patient' + position + '-item').html('').addClass('ke-loading');
 
-		ui.getFragmentActionAsJson('kenyadq', 'patient/mergePatients', 'patientSummary', { patientId : patientId }, function (patient) {
+		ui.getFragmentActionAsJson('kpdq', 'patient/mergePatients', 'patientSummary', { patientId : patientId }, function (patient) {
 			showDataPoints('#patient' + position + '-infopoints', patient.infopoints);
 			showDataPoints('#patient' + position + '-names', patient.names);
 			showDataPoints('#patient' + position + '-identifiers', patient.identifiers);
